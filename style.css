@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Lobster', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #424242;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    animation: swing 5s infinite ease-in-out, pulse 2s infinite alternate;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.birthday-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #d81b60;
+}
+
+.birthday-text span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.birthday-text span:hover {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+.subtext {
+    font-size: 1.5em;
+    margin: 15px auto 25px;
+    max-width: 80%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #5d4037;
+    animation: textGlow 2s infinite alternate;
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+}
+
+.music-player button {
+    background-color: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 1px;
+}
+
+.music-player button:hover {
+    background-color: #29b6f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.volume-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-control label {
+    font-size: 1.1em;
+    color: #5d4037;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #b0e0ff;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4fc3f7;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]:active::-webkit-slider-thumb,
+input[type="range"].active::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background: #ec407a;
+}
+
+#repeat-confetti {
+    background-color: #f06292;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 1px;
+}
+
+#repeat-confetti:hover {
+    background-color: #ec407a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#repeat-confetti.clicked {
+    transform: scale(0.95) translateY(-2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes swing {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 5px rgba(216, 27, 96, 0.5); }
+    100% { text-shadow: 0 0 15px rgba(216, 27, 96, 0.8); }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .avatar {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .birthday-text {
+        font-size: 1.8em;
+    }
+    
+    .subtext {
+        font-size: 1.2em;
+    }
+    
+    .music-player {
+        max-width: 250px;
+        padding: 15px;
+    }
+}

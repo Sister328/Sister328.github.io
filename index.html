@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Рождения!</title>
+    <link rel="icon" href="cake-1024.webp" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="лера.jpg" alt="Аватар Леры" class="avatar">
+        <h1 class="birthday-text animate__animated animate__fadeInDown">
+            <span>С</span>
+            <span>&nbsp;</span>
+            <span>Д</span>
+            <span>Н</span>
+            <span>Ё</span>
+            <span>М</span>
+            <span>&nbsp;</span>
+            <span>Р</span>
+            <span>О</span>
+            <span>Ж</span>
+            <span>Д</span>
+            <span>Е</span>
+            <span>Н</span>
+            <span>И</span>
+            <span>Я</span>
+            <span>,</span>
+            <span>&nbsp;</span>
+            <span>Лера</span>
+            <span>!</span>
+        </h1>
+        <p class="subtext animate__animated animate__fadeInUp">Пусть этот день будет наполнен радостью и твоей улыбкой!</p>
+
+        <div class="music-player">
+            <audio id="music" src="лерена.mp3" preload="auto"></audio>
+            <button id="play-pause">Сияй</button>
+            <button id="restart-music">Сиять ещё раз</button>
+            <div class="volume-control">
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+                <label for="volume">Громкость</label>
+            </div>
+        </div>
+
+        <button id="repeat-confetti">Усиль конфетти!</button>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="js.js"></script>
+</body>
+</html>
